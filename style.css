@@ -1,0 +1,147 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f2f2f2;
+    font-family: "Roboto", sans-serif;
+}
+
+.head {
+    background-color: #96f7e3;
+    text-align: center;
+    padding: 5px 0 0 0;
+    color: #37897a;
+}
+
+.head div {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.head li {
+    background-color: #96f7e3;
+    padding: 20px 0;
+    width: 100%;
+    border: solid 1px;
+    border-color: rgba(0, 0, 0, .1);
+    border-left: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+nav .navLeft ul {
+    display :flex;
+    list-style: none;
+    color: #444444;
+}
+
+.navLeft ul li {
+    padding: 5px;
+    padding-left: 20px;
+}
+
+.navRight {
+    margin-left: auto;
+}
+
+.navRight input{
+    border-radius: 2em;
+    border: none;
+    padding: 0.6em;
+    color: #A2A2A2;
+    padding-left: 1.5em;
+    outline: none;
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%)
+}
+
+.navRight button{
+	background-color:#96f7e4;
+	border-radius:28px;
+	border:1px solid #96f7e4;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:13px;
+	padding:10px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #7dd1c0;
+}
+
+.navRight button:hover {
+	background-color:#8be3d1;
+}
+
+.navRight button:active {
+	position:relative;
+	top:1px;
+}
+
+.navRight .signIn{
+    background-color: white;
+    border: 0px;
+    color: #666666;
+    text-shadow: 0px;
+}
+
+.navRight .signIn:hover {
+	background-color:#8be3d1;
+    color: white;
+    text-shadow:0px 1px 0px #7dd1c0;
+}
+
+.categories ul{
+    display: flex;
+    list-style: none;
+    color: #444444;
+}
+
+.categories ul li{
+    margin: 10px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0px;
+    margin: 20px;
+}
+
+.item {
+    background-color: red;
+    width: 350px;
+    height: 350px;
+    padding: px;
+    position: relative;
+    margin: 15px;
+}
+
+.item h2 {
+    text-align: center;
+    z-index: 2;
+    position: absolute;
+    left: 5%;
+    display: none;
+}
+
+.item .price{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #96f7e3;
+    z-index: 1;
+    color: white;
+}
+
+.item img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 350px;
+}
