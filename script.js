@@ -15,14 +15,24 @@ function sortData(gifts) {
         const copy = template.cloneNode(true);
 
         copy.querySelector("h2").textContent = gift.title.rendered;
-        copy.querySelector(".item img").src = gift.image.guid;
+
+        if (gift.image.guid) {
+            copy.querySelector(".item img").src = gift.image.guid;
+        } else {
+            copy.querySelector(".item img").src = "/img/unknown.jpg";
+            copy.querySelector("h2").style.display = "block";
+        }
+
         copy.querySelector(".item .price .priceNr").textContent = gift.price;
-        if(gift.in_stock==1){
-        copy.querySelector(".item .price .stock").textContent = "✓";
+
+        if (gift.in_stock == 1) {
+            copy.querySelector(".item .price .stock").textContent = "✓";
+        } else {
+            copy.querySelector(".item .price .stock").textContent = "";
         }
-        else{
-        copy.querySelector(".item .price .stock").textContent = "";
-        }
-        document.querySelector("main").appendChild(copy)
+
+        copy.querySelector(".item .whoBought span").textContent = "+" +   Math.floor(Math.random() * Math.floor(100));
+
+        document.querySelector("main").appendChild(copy);
     })
 }
