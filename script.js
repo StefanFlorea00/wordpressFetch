@@ -31,7 +31,20 @@ function sortData(gifts) {
             copy.querySelector(".item .price .stock").textContent = "";
         }
 
-        copy.querySelector(".item .whoBought span").textContent = "+" +   Math.floor(Math.random() * Math.floor(100));
+        whoBoughtNr = Math.floor(Math.random() * Math.floor(100));
+        if(whoBoughtNr < 50) {
+            copy.querySelector(".item .whoBought .third").style.display = "none";
+        }
+        if (whoBoughtNr < 25) {
+            copy.querySelector(".item .whoBought .second").style.display = "none";
+        }
+        if (whoBoughtNr==0){
+            copy.querySelector(".item .whoBought").style.display = "none";
+        }
+        copy.querySelector(".item .whoBought .first").src = "/img/person" + Math.floor(Math.random() * Math.floor(5)) + ".jpg";
+        copy.querySelector(".item .whoBought .second").src = "/img/person" + Math.floor(Math.random() * Math.floor(3)) + ".jpg";
+        copy.querySelector(".item .whoBought .third").src = "/img/person" + Math.floor(Math.random() * Math.floor(5)) + ".jpg";
+        copy.querySelector(".item .whoBought span").textContent = "+" +  whoBoughtNr;
 
         document.querySelector("main").appendChild(copy);
     })
